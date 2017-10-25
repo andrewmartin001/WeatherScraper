@@ -31,6 +31,17 @@ class Year():
         print 'exception in getting temp from month %s year %s' %(month_string, str(self.year_no))
         print e
     return temps
+  def get_all_rainfall(self):
+    '''puts all rainfall from the year into a list'''
+    rain = []
+    for month_string in MONTHLIST:
+      try:
+        month_object = self.months[month_string]
+        rain.extend(month_object.rain)
+      except Exception as e:
+        print 'exception in getting temp from month %s year %s' %(month_string, str(self.year_no))
+        print e
+    return rain
   def get_all_datetimes(self):
     times = []
     for month_string in MONTHLIST:

@@ -7,8 +7,6 @@ from sklearn import linear_model
 from visualisation.scattergl_plot import plot_two_scatters
 from linear_regression_ttest import get_slope_t_statistic, get_two_sided_p_value
 
-
-
 #create list of dates in two character string format (corresponds to the format of the web files)
 YEARINTS = range(2,17) #years from 2002 to 2016 inclusive
 YEARLIST = [str(yr).zfill(2) for yr in YEARINTS] # string format of years
@@ -43,6 +41,3 @@ p_value = get_two_sided_p_value(t_value, len(residuals)-2)
 print p_value
 
 plot_two_scatters(year_names, average_temperatures, y_pred, 'Date', 'Temperature (C)', 'average_temps')
-
-
-
